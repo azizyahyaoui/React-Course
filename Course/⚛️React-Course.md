@@ -69,7 +69,7 @@ Make sure you're comfortable with:
 
 ---
 
-## ⚙️ React Setup in 60 Seconds
+## ⚙️ React Setup using Vite with TypeScript & Tailwind
 
 - Install Node.js from [https://nodejs.org](https://nodejs.org)
 - Then use **Vite** to quickly spin up a React project.
@@ -104,7 +104,7 @@ Unlike older tools like Webpack, Vite is fast — like *really* fast — thanks 
 ### ⚓ lets start:
 
 ```bash
-npm create vite@latest my-react-app -- --template react
+npm create vite@latest my-react-app -- --template react-ts
 cd my-react-app
 npm install
 npm run dev
@@ -153,7 +153,7 @@ Let's break down the **Vite + React** project structure.
 
 ---
 
-![alt text](image.png)
+![alt text](screenshots/image.png)
 
 ---
 
@@ -268,3 +268,89 @@ Everything is neatly separated. You build your app in `src/`, serve raw files fr
 
 Once you get comfy here, React starts to feel like home 🏠
 
+---
+
+### 🧶 **Add TailwindCSS** 
+
+Now let’s add **TailwindCSS** to the mix:
+-Tailwind CSS 4.0 Documentation:
+[TailwindCSS.com](https://tailwindcss.com/docs/installation/using-vite)
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+# npx tailwindcss init -p  // old versions
+npx @tailwindcss/cli init -p
+
+```
+
+**➤ `src/index.css`:**
+
+Replace everything with:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Now make sure your `main.tsx` imports it:
+
+```tsx
+import './index.css';
+```
+
+---
+
+### ✅ Verify it’s Working
+
+Inside `App.tsx`, try:
+
+```tsx
+return (
+  <div className="text-3xl font-bold underline text-blue-600">
+    Hello React ⚛️ with Tailwind!
+  </div>
+);
+```
+
+If it works, you’re golden 🔥
+
+---
+
+## 🛠️ Customize the Port
+
+Want to run the dev server on port `5050` instead of the default `5173`?
+
+**➤ In `vite.config.ts`:**
+
+```ts
+export default defineConfig({
+  server: {
+    port: 5050
+  }
+});
+```
+
+<summary>🛠️ And for security reasons, using the default port is usually considered bad practice. To use a custom port like <code>5050</code>, here's how!</summary>
+
+---
+
+## 💡 Why TypeScript?
+
+* Type-safe React props/components
+* Better developer experience
+* Helpful errors and autocompletion
+* Modern projects usually ship with TS by default
+
+---
+
+## 💡 Why Tailwind?
+
+* No more fighting with custom CSS or class names
+* Utility-first, mobile-first, and responsive by design
+* Easily theme your app and components
+* Developer-friendly and scalable
+
+> Once you use Tailwind, regular CSS feels like writing with rocks 😅
+
+---
