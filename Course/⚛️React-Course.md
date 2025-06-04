@@ -628,9 +628,9 @@ We can utilize Font Awesome in React — it's widely supported and easy to integ
 
 ---
 
-## 🎨 How to Use Font Awesome in React (Vite + TS)
+### 🎨 How to Use Font Awesome in React (Vite + TS)
 
-### ✅ Step 1: Install the Required Packages
+#### ✅ Step 1: Install the Required Packages
 
 ```bash
 npm install --save @fortawesome/react-fontawesome
@@ -645,7 +645,7 @@ npm install --save @fortawesome/free-solid-svg-icons
 
 ---
 
-### ✅ Step 2: Add and Use Icons in a Component
+#### ✅ Step 2: Add and Use Icons in a Component
 
 ```tsx
 // src/components/Header.tsx
@@ -664,7 +664,7 @@ export default function Header() {
 
 ---
 
-### 🔧 Optional: Set Up a Global Icon Library
+#### 🔧 Optional: Set Up a Global Icon Library
 
 If you want to use icons globally without re-importing them each time:
 
@@ -691,7 +691,7 @@ And use icons without importing them individually:
 
 ---
 
-## 💡 Bonus: Tailwind + FontAwesome
+### 💡 Bonus: Tailwind + FontAwesome
 
 You can style the icons using Tailwind classes:
 
